@@ -12,11 +12,12 @@ Implementação educacional de uma rede neural simples para o ensino de Programa
 ## Estrutura do Repositório
 
 Este repositório contém implementações para três linguagens:
-- `C++`: Contém `NeuralNetwork.h`, `NeuralNetwork.cpp`, e `main.cpp`.
-- `Java`: Contém `NeuralNetwork.java` e `Main.java`.
-- `Python`: Contém `neural_network.py` e `main.py`.
-  
-Além disso, a pasta `data/` contém os arquivos de dados MNIST necessários para treinamento e teste da rede neural.
+- `C++`: Contém `NeuralNetwork.h`, `NeuralNetwork.cpp`, `main.cpp` e `mnist_visualizer.cpp`.
+- `Java`: Contém `NeuralNetwork.java`, `Main.java` e `MNISTVisualizer.java`.
+- `Python`: Contém `neural_network.py`, `main.py`, e `visualize_mnist.py`.
+
+Além disso:
+- `data/`: Contém os arquivos de dados MNIST necessários para treinamento e teste da rede neural.
 
 ```
 Simple_Neural_Network_POO/
@@ -24,12 +25,15 @@ Simple_Neural_Network_POO/
 │   ├── NeuralNetwork.h
 │   ├── NeuralNetwork.cpp
 │   ├── main.cpp
+│   └── mnist_visualizer.cpp
 ├── Java/
 │   ├── NeuralNetwork.java
-│   └── Main.java
+│   ├── Main.java
+│   └── MNISTVisualizer.java
 ├── Python/
 │   ├── neural_network.py
-│   └── main.py
+│   ├── main.py
+│   └── visualize_mnist.py
 ├── README.md
 └── data/
     ├── train-images.idx3-ubyte
@@ -44,16 +48,16 @@ Simple_Neural_Network_POO/
 
 Para cada linguagem, você precisará de:
 
-- **C++**: Compilador com suporte a C++11 ou superior.
+- **C++**: Compilador com suporte a C++11 ou superior e OpenCV para a visualização.
 - **Java**: Java Development Kit (JDK) versão 8 ou superior.
-- **Python**: Python 3.x e a biblioteca `numpy`.
+- **Python**: Python 3.x e as bibliotecas `numpy` e `matplotlib`.
 
 ### Como Configurar o Projeto
 
 1. Clone o repositório:
    ```bash
    git clone https://github.com/SEU_USUARIO/Simple_Neural_Network_POO.git
-   cd Simple_Neural_Network_POO
+   cd SimpleNeuralNetworkPOO
    ```
 
 2. **Baixe o Dataset MNIST**  
@@ -63,7 +67,7 @@ Para cada linguagem, você precisará de:
 
 ### C++
 
-1. Compile o código:
+1. Compile o código principal:
    ```bash
    g++ -o neural_network C++/main.cpp C++/NeuralNetwork.cpp -std=c++11
    ```
@@ -85,13 +89,62 @@ Para cada linguagem, você precisará de:
 
 ### Python
 
-1. Instale o `numpy`:
+1. Instale o `numpy` e `matplotlib`:
    ```bash
-   pip install numpy
+   pip install numpy matplotlib
    ```
 2. Execute o script principal:
    ```bash
    python Python/main.py
+   ```
+
+## Visualização das Imagens MNIST
+
+Este repositório inclui arquivos para visualizar imagens do dataset MNIST em cada linguagem. Eles estão nas pastas das linguagens correspondentes.
+
+### Estrutura dos Arquivos MNIST
+
+Cada arquivo de imagens MNIST possui a seguinte estrutura:
+
+- **Cabeçalho**:
+  - Bytes 0-3: Número mágico (identificador de arquivo, `0x00000803` para imagens).
+  - Bytes 4-7: Número total de imagens.
+  - Bytes 8-11: Número de linhas em cada imagem (28 para MNIST).
+  - Bytes 12-15: Número de colunas em cada imagem (28 para MNIST).
+  
+- **Dados de Pixels**:
+  - Cada imagem é uma sequência de bytes onde cada byte representa a intensidade de um pixel (0 a 255), onde 0 é preto e 255 é branco.
+  - Cada imagem é uma matriz de 28x28 pixels, ou seja, 784 bytes por imagem.
+
+### Códigos de Visualização
+
+#### 1. C++ com OpenCV
+
+- **Arquivo**: `mnist_visualizer.cpp` (na pasta `C++`)
+- **Descrição**: Usa `OpenCV` para carregar e exibir uma imagem do dataset.
+- **Execução**:
+   ```bash
+   g++ C++/mnist_visualizer.cpp -o mnist_visualizer `pkg-config --cflags --libs opencv4`
+   ./mnist_visualizer
+   ```
+
+#### 2. Java com Swing
+
+- **Arquivo**: `MNISTVisualizer.java` (na pasta `Java`)
+- **Descrição**: Usa `javax.swing` para exibir a imagem em uma janela.
+- **Execução**:
+   ```bash
+   javac Java/MNISTVisualizer.java
+   java Java.MNISTVisualizer
+   ```
+
+#### 3. Python com Matplotlib
+
+- **Arquivo**: `visualize_mnist.py` (na pasta `Python`)
+- **Descrição**: Usa `matplotlib` para exibir uma imagem do dataset.
+- **Execução**:
+   ```bash
+   python Python/visualize_mnist.py
    ```
 
 ## Estrutura de Código
@@ -134,9 +187,10 @@ Para alunos, tente fazer as seguintes modificações no código:
 
 ## Referências
 
+- [Dataset MNIST](http://yann.lecun.com/exdb/mnist/)
 - [Documentação da Biblioteca <chrono> (C++)](https://en.cppreference.com/w/cpp/chrono)
 - [Numpy para Redes Neurais (Python)](https://numpy.org/doc/stable/)
-- [Tutorial de Java](https://docs.oracle.com/javase/tutorial/)
+- [Tutorial de Java](https://docs.oracle.com/javase/tutorial/uiswing/)
 
 ## Contribuições
 
@@ -144,10 +198,4 @@ Sinta-se à vontade para contribuir com melhorias neste projeto. Sugestões são
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT.
-
-### Observações
-
-- O `README.md` orienta os alunos sobre como configurar o repositório, executar o código, e explorar o funcionamento da rede neural.
-- A estrutura do repositório permite que os alunos trabalhem com cada linguagem de forma independente.
-- Incluí exemplos de tarefas e experimentos para que eles possam aprofundar o entendimento sobre redes neurais e programação orientada a objetos.
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
