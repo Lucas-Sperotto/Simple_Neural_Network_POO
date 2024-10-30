@@ -1,4 +1,4 @@
-# SimpleNeuralNetworkPOO
+# Simple_Neural_Network_POO
 
 Implementação educacional de uma rede neural simples para o ensino de Programação Orientada a Objetos (POO) em C++, Java e Python. Este repositório foi projetado para introduzir conceitos de redes neurais e permitir que os alunos experimentem com estruturas de classes, encapsulamento e modularidade.
 
@@ -19,7 +19,7 @@ Este repositório contém implementações para três linguagens:
 Além disso, a pasta `data/` contém os arquivos de dados MNIST necessários para treinamento e teste da rede neural.
 
 ```
-SimpleNeuralNetworkPOO/
+Simple_Neural_Network_POO/
 ├── C++/
 │   ├── NeuralNetwork.h
 │   ├── NeuralNetwork.cpp
@@ -52,8 +52,8 @@ Para cada linguagem, você precisará de:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU_USUARIO/SimpleNeuralNetworkPOO.git
-   cd SimpleNeuralNetworkPOO
+   git clone https://github.com/SEU_USUARIO/Simple_Neural_Network_POO.git
+   cd Simple_Neural_Network_POO
    ```
 
 2. **Baixe o Dataset MNIST**  
@@ -151,5 +151,3 @@ Este projeto está licenciado sob a licença MIT.
 - O `README.md` orienta os alunos sobre como configurar o repositório, executar o código, e explorar o funcionamento da rede neural.
 - A estrutura do repositório permite que os alunos trabalhem com cada linguagem de forma independente.
 - Incluí exemplos de tarefas e experimentos para que eles possam aprofundar o entendimento sobre redes neurais e programação orientada a objetos.
-
-Essa estrutura completa pode ser copiada e colada diretamente para o GitHub. Qualquer dúvida adicional ou ajuste para o exercício, é só me avisar!
