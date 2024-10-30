@@ -1,7 +1,7 @@
 # Visualização de Imagens MNIST
 
 Este diretório contém códigos para visualizar as imagens do dataset MNIST em diferentes linguagens de programação: **Python**, **Java** e **C++**. Cada código permite abrir um arquivo MNIST e exibir uma imagem específica em escala de cinza.
-
+   sdas
 ## Estrutura dos Arquivos MNIST
 
 Cada arquivo de imagens MNIST possui a seguinte estrutura:
