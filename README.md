@@ -18,6 +18,26 @@ Este repositório contém implementações para três linguagens:
   
 Além disso, a pasta `data/` contém os arquivos de dados MNIST necessários para treinamento e teste da rede neural.
 
+```
+SimpleNeuralNetworkPOO/
+├── C++/
+│   ├── NeuralNetwork.h
+│   ├── NeuralNetwork.cpp
+│   ├── main.cpp
+├── Java/
+│   ├── NeuralNetwork.java
+│   └── Main.java
+├── Python/
+│   ├── neural_network.py
+│   └── main.py
+├── README.md
+└── data/
+    ├── train-images.idx3-ubyte
+    ├── train-labels.idx1-ubyte
+    ├── t10k-images.idx3-ubyte
+    └── t10k-labels.idx1-ubyte
+```
+
 ## Configuração do Projeto
 
 ### Pré-requisitos
